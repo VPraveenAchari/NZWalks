@@ -5,7 +5,7 @@ using NZWalks.API.Repositories.IRepository;
 
 namespace NZWalks.API.Controllers
 {
-    [ApiController]
+    //[ApiController]
     [Route("[controller]")]
     public class WalksController : Controller
     {
