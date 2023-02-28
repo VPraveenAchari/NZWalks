@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using NZWalks.API.Data;
 using NZWalks.API.Models.Domain;
 using NZWalks.API.Models.DTO;
-using NZWalks.API.Repositories;
+using NZWalks.API.Repositories.IRepository;
 
 namespace NZWalks.API.Controllers
 {
@@ -32,7 +32,6 @@ namespace NZWalks.API.Controllers
             regions.ToList().ForEach(region =>
             {
                 var regionDTO = new Models.DTO.Region()
-
                 {
                     Id = region.Id,
                     Code = region.Code,
@@ -44,36 +43,36 @@ namespace NZWalks.API.Controllers
                 };
                 regionsDTO.Add(regionDTO);
             });
-          /*  var regions = new List<Region>()
-             {
-                 new Region()
-                 {
-                     Id=Guid.NewGuid(),
-                     Name="Willington",
-                     Code="WLG",
-                     Area=22550,
-                     Lat=-1.76939,
-                     Long=5.890468,
-                     Population=7800000
-                 } ,
-                 new Region()
-                 {
-                     Id=Guid.NewGuid(),
-                     Name="Acqualand",
-                     Code="AUCK",
-                     Area=82755,
-                     Lat=-1.69636,
-                     Long=5.12821,
-                     Population=9648000
-                 }
-             };
-            return Ok(regions);*/
+            /*  var regions = new List<Region>()
+               {
+                   new Region()
+                   {
+                       Id=Guid.NewGuid(),
+                       Name="Willington",
+                       Code="WLG",
+                       Area=22550,
+                       Lat=-1.76939,
+                       Long=5.890468,
+                       Population=7800000
+                   } ,
+                   new Region()
+                   {
+                       Id=Guid.NewGuid(),
+                       Name="Acqualand",
+                       Code="AUCK",
+                       Area=82755,
+                       Lat=-1.69636,
+                       Long=5.12821,
+                       Population=9648000
+                   }
+               };
+              return Ok(regions);*/
             // return Ok(regions);
             return Ok(regionsDTO);
-            /*
-                        var regionsDTO = mapper.Map<List<Models.DTO.Region>>(regions);
-                        return Ok(regionsDTO);*/
-            
+
+          /*  var regionsDTO = mapper.Map<List<Models.DTO.Region>>(regions);
+            return Ok(regionsDTO);*/
+
         }
         [HttpGet]
         [Route("{id:guid}")]
